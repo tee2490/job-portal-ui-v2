@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { Tooltip } from "./Tooltip";
 
+const PRIVACY_POLICY_TEXT =
+  "We only collect the details you provide, such as your profile, resume and job applications, and use them solely to connect you with employers. We never sell your personal data.";
+
 const COOKIE_POLICY_TEXT =
   "We use your browser's local storage to keep you signed in and to remember your saved jobs, applications and theme preference. We don't use third-party tracking or advertising cookies.";
 
@@ -145,10 +148,15 @@ const Footer = () => {
 
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-gray-400 mb-6 md:mb-0">
-              <a className="group relative hover:text-white transition-colors duration-300">
-                <span className="relative z-10">Privacy Policy</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -inset-2"></div>
-              </a>
+              <Tooltip title="Privacy Policy" content={PRIVACY_POLICY_TEXT}>
+                <a
+                  tabIndex={0}
+                  className="group relative cursor-help hover:text-white focus:text-white focus:outline-none transition-colors duration-300"
+                >
+                  <span className="relative z-10">Privacy Policy</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 -inset-2"></div>
+                </a>
+              </Tooltip>
               <a className="group relative hover:text-white transition-colors duration-300">
                 <span className="relative z-10">Terms of Service</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -inset-2"></div>
