@@ -1,5 +1,18 @@
 {
   "enabledPlugins": {
     "commit-commands@claude-code-plugins": true
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "˝ -e 'display notification \"Claude Code needs your attention\" with title \"Claude Code\"'"
+          }
+        ]
+      }
+    ]
   }
 }
