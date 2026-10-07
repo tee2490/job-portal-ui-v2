@@ -1,0 +1,1 @@
+- [Data-layer hotspots](data-layer-hotspots.md) — known storage-key drift, bypassed JobContext, duplicate job merge, baseline lint errors
